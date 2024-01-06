@@ -1,0 +1,68 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>{% block title%} {% endblock %}</title>
+     <style>
+
+      <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4689780389028917"
+     crossorigin="anonymous"></script>
+  </style>
+  </head>
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+  <body>
+
+  <ul class="navigation">
+    <li><a href="/train/custsign">Login as as Customer</a></li>
+    <li><a href="/train/sign">Login as a staff</a></li>
+
+  </ul>
+</div>
+<style>
+  .container {
+  position: relative;
+  margin: 0 auto;
+  width: 300px; /* Adjust width as needed */
+  height: 300px;
+  background-color: #ff0000; /* Change to your desired color */
+  border-radius: 50%; /* For the square box */
+}
+
+.navigation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+}
+
+.navigation li {
+  margin: 0 10px;
+}
+
+.navigation a {
+  display: inline-block;
+  padding: 10px;
+  color: #ffffff; /* Change text color */
+  text-decoration: none;
+  background-color: #000000; /* Change button color */
+  border-radius: 5px;
+}
+
+.navigation a:hover {
+  background-color: #cccccc; /* Change hover color */
+}
+
+</style>
+

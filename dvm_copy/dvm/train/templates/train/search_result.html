@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Blue Panel</title>
+<style>
+  .blue-panel {
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text */
+    padding: 10px;
+    text-align: center;
+    position: fixed; /* Fixed to top of page */
+    top: 0;
+    width: 100%;
+    z-index: 1; /* Ensure it stays on top */
+  }
+
+  .blue-panel div {
+    display: inline-block; /* Horizontal layout */
+    margin: 0 10px; /* Spacing between contents */
+  }
+
+  /* Add this new rule to create a margin below the panel */
+  body {
+    margin-top: 60px; /* Adjust value as needed */
+  }
+  body {
+    background-image: url("gd"); /* Replace with your image path */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    background-size: cover; /* Make image cover the entire element */
+  }
+</style>
+</head>
+<body>
+{{WARNING}}
+<div class="blue-panel">
+  <div>{{extra.1}}</div>
+  &#8594;
+  <div>{{extra.2}}</div>
+  on
+  <div>{{extra.0}}</div>
+</div>
+
+{% for object in search %}
+  </p>
+  <form method="POST">
+    <label for="">Train id:</label>
+    <input type="text" id="train_id" name="train_id" value="{{object.id_1}}">
+    <p>
+      Seats Remaining:
+      General:{{object.seatsg}}
+      sleeper:{{object.seatss}}
+      3rd Ac:{{object.seats3}}
+      2nd AC:{{object.seats2}}
+      1st AC:{{object.seats1}}
+    </p>
+    <button type="submit">Book</button>
+    {% csrf_token %}
+  </form>
+{% endfor %}
+
+</body>
+</html>

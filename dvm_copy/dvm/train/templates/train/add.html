@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train information</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+      
+        <form id="train-form" method="post" class="contact-form">
+            <h2>Add Train Information</h2>
+            <table>
+                <tr>
+                    <th>Train Name:</th>
+                    <td><input type="text" id="name" name="name" required></td>
+                </tr>
+                <tr>
+                    <th>Station 1:</th>
+                    <td><input type="text" id="s1" name="s1" required></td>
+                </tr>
+          
+                <tr>
+                    <th>No. of seatss:</th>
+                    <td><input type="text" id="seatss" name="seatss" required></td>
+                </tr>
+                <tr>
+                    <th>No. of seatg:</th>
+                    <td><input type="text" id="seatsg" name="seatsg" required></td>
+                </tr>
+                <tr>
+                    <th>No. of seat1:</th>
+                    <td><input type="text" id="seats1" name="seats1" required></td>
+                </tr>
+                <tr>
+                    <th>No. of seat2:</th>
+                    <td><input type="text" id="seats2" name="seats2" required></td>
+                </tr>
+                <tr>
+                    <th>No. of seat3:</th>
+                    <td><input type="text" id="seats3" name="seats3" required></td>
+                </tr>
+                <tr>
+                    <th>Fare for general:</th>
+                    <td><input type="text" id="fareg" name="fareg" required></td>
+                </tr>
+                <tr>
+                    <th>Fare for sleeper:</th>
+                    <td><input type="text" id="fares" name="fares" required></td>
+                </tr>
+                <tr>
+                    <th>Fare for 3rd Ac:</th>
+                    <td><input type="text" id="fare3" name="fare3" required></td>
+                </tr>
+                <tr>
+                    <th>Fare for 2nd Ac:</th>
+                    <td><input type="text" id="fare2" name="fare2" required></td>
+                </tr>
+                <tr>
+                    <th>Fare for 1st ac:</th>
+                    <td><input type="text" id="fare1" name="fare1" required></td>
+                </tr>
+                <tr>
+                    <th>Time:</th>
+                    <td><input type="text" id="time" name="time" required></td>
+                </tr>
+                <tr>
+                    <th>Days:</th>
+                    <td><input type="text" id="days" name="days" required></td>
+                </tr>
+                <tr>
+                    <th>ID:</th>
+                    <td><input type="text" id="id" name="id" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="submit">Submit</button></td>
+                </tr>
+            </table>
+            {% csrf_token %}
+        </form>
+    </div>
+    <style>
+      body {
+        background-image: url("https://wallpaperaccess.com/full/4179709.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      h2 {
+        color: red;
+      }
+      th {
+        color: white;
+      }
+    </style>
+    
+</body>
+</html>

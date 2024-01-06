@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dynamic Customer Form</title>
+</head>
+<body>
+  <div class="blue-panel">
+    <div>Home</div>
+    <div>Logout</div>
+    <div>Search Train</div>
+  </div>
+
+  <form id="myForm" method="POST">
+    <div id="customerFields"></div>
+    <button type="button" onclick="addCustomerField()">+ Add Customer</button>
+    <button type="submit">Submit Form</button>
+    {% csrf_token %}
+    <input type="hidden" id="customerCount" name="customerCount" value="1">
+  </form>
+
+  <style>
+    /* Existing styles here */
+    body {
+      background-color:#ccff00;
+    }
+ 
+      .blue-panel {
+        background-color: #007bff; /* Blue background */
+        color: #fff; /* White text */
+        padding: 10px;
+        text-align: center;
+        position: fixed; /* Fixed to top of page */
+        top: 0;
+        width: 100%;
+        z-index: 1; /* Ensure it stays on top */
+      }
+    
+      .blue-panel div {
+        display: inline-block; /* Horizontal layout */
+        margin: 0 10px; /* Spacing between contents */
+      }
+    
+      /* Add this new rule to create a margin below the panel */
+      body {
+        margin-top: 60px; /* Adjust value as needed */
+      }
+  </style>
+
+  <script>
+    let customerCount = 0;
+
+    function addCustomerField() {
+      customerCount++;
+      const fieldsDiv = document.getElementById("customerFields");
+      const customerField = document.createElement("fieldset");
+      customerField.innerHTML = `
+        <legend>Customer ${customerCount}</legend>
+        <label for="name${customerCount}">Name:</label>
+        <input type="text" id="name${customerCount}" name="name${customerCount}" required>
+        <br>
+        <label for="email${customerCount}">Email:</label>
+        <input type="email" id="email${customerCount}" name="email${customerCount}" required>
+        <br>
+        <label for="age${customerCount}">Age:</label>
+        <input type="text" id="age${customerCount}" name="age${customerCount}" required>
+        <br>
+        <label for="meal${customerCount}">Meal:</label>
+        <input type="text" id="meal${customerCount}" name="meal${customerCount}" required>
+        <br>
+        <label for="gender${customerCount}">Gender:</label>
+        <input type="text" id="gender${customerCount}" name="gender${customerCount}" required>
+        <br>
+        <label for="class${customerCount}">Class:</label>
+        <select id="class${customerCount}" name="class${customerCount}" required>
+          <option value="">Select Class</option>
+          <option value="1stAC">1st AC</option>
+          <option value="2ndAC">2nd AC</option>
+          <option value="3rdAC">3rd AC</option>
+          <option value="Sleeper">Sleeper</option>
+          <option value="General">General</option>
+        </select>
+      `;
+      fieldsDiv.appendChild(customerField);
+
+      // Update hidden field value
+      const customerCountInput = document.getElementById("customerCount");
+      customerCountInput.value = customerCount;
+    }
+  </script>
+</body>
+</html>

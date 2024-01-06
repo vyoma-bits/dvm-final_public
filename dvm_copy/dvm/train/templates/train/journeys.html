@@ -1,0 +1,27 @@
+<table id="table">
+  <!-- Add a caption to describe the table -->
+  <caption>Travel History</caption>
+  <tr>
+    <!-- Use the <th> tag to create column headers -->
+    <th>Past Journey</th>
+ 
+    
+    <th>Upcoming Journey</th>
+    {% csrf_token %} 
+  </tr>
+  <!-- Use the <tr> tag to create rows -->
+  {% for b in u %}
+
+    <!-- Use the <td> tag to create cells -->
+    <td> {{b.0}}</td>
+    <td> 
+      <form id="train-form" method="post" class="contact-form">
+        <label for="message"></label>
+        <input type="text" id="name" name="name"  value ="{{b.1}}"required>
+        <button type="submit">Cancel </button>
+        {% csrf_token %}
+      </form>
+    </td>
+  </tr>
+  {% endfor %}
+</table>

@@ -1,0 +1,46 @@
+
+<head>
+<title>Enter Name Form</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="open-form">Enter Your Name</button>
+  <form method="post">
+
+  <div id="name-form" class="hidden">
+    <h2>Add money to wallet</h2>
+    <label for="name-input">Amount</label>
+    <input type="text" id="name-input"  name="vyoma" required>
+    <button type="submit">Submit</button>
+    {% csrf_token %}
+  </div>
+</form>
+  <style>
+    /* style.css */
+.hidden {
+  display: none;
+}
+
+  </style>
+
+  <script>
+    // script.js
+const openFormButton = document.getElementById("open-form");
+const nameForm = document.getElementById("name-form");
+
+openFormButton.addEventListener("click", () => {
+  nameForm.classList.toggle("hidden"); // Toggle visibility
+});
+
+
+  </script> 
+</body>
+<script>
+  const dateInput = document.getElementById("journey_date");
+  dateInput.addEventListener("change", (event) => {
+      const selectedDate = new Date(event.target.value);
+      const formattedDate = selectedDate.toISOString().slice(0, 10);  // YYYY-MM-DD format
+      event.target.value = formattedDate;
+  });
+</script>
+
